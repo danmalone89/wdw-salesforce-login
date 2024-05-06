@@ -27,12 +27,13 @@
     <div class="image-container">
       <img id="myImage" alt="Random Unsplash Image" />
     </div>
-    <script>
-      // This URL provides a random image from Unsplash in a vertical orientation
-      var imageUrl = "https://source.unsplash.com/random/1920x1080";
+      <script>
+        // This URL provides a random nature-oriented image from Unsplash
+        var imageUrl = "https://source.unsplash.com/random/1920x1080/?nature";
+      
+        var imageElement = document.getElementById("myImage");
+        imageElement.src = imageUrl;
+      </script>
 
-      var imageElement = document.getElementById("myImage");
-      imageElement.src = imageUrl;
-    </script>
   </body>
 </html>
