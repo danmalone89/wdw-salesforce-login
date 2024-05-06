@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <style>
-      body, html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .image-container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img id="myImage" alt="Random Image" />
+  </div>
+  <script>
+    var natureUrl = "https://source.unsplash.com/random/1920x1080/?nature";
+    var petUrls = [
+      "https://i.ibb.co/m8mFJYH/wen-cat.jpg",
+      "https://i.ibb.co/dk7bgsP/wen-cat-two.jpg",
+      "https://i.ibb.co/zfDsS8t/miley1.jpg",
+      "https://i.ibb.co/DMDD7x0/miley3.jpg",
+      "https://i.ibb.co/TWXPg8c/Image-2.jpg",
+      "https://i.ibb.co/25x8TmC/jen-cat.jpg",
+      "https://i.ibb.co/Z8c3RWv/jen-dog.jpg",
+      "https://i.ibb.co/ZgpqtnD/shelby-dog.jpg",
+      "https://i.ibb.co/48LT5Cv/donnadog.jpg",
+      "https://i.ibb.co/Y2D9W1M/258743382-10103164180838219-6697138220678460253-n.jpg",
+      "https://i.ibb.co/qMP99VJ/coco.jpg"
+    ];
 
-      .image-container {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+    // Decide randomly to show a nature image or a pet image
+    var showNature = Math.random() < 0.5; // 50% chance to show nature image
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="image-container">
-      <img id="myImage" alt="Random Unsplash Image" />
-    </div>
-      <script>
-        // This URL provides a random nature-oriented image from Unsplash
-        var imageUrl = "https://source.unsplash.com/random/1920x1080/?nature";
-      
-        var imageElement = document.getElementById("myImage");
-        imageElement.src = imageUrl;
-      </script>
-
-  </body>
+    var imageUrl = showNature ? natureUrl : petUrls[Math.floor(Math.random() * petUrls.length)];
+    var imageElement = document.getElementById("myImage");
+    imageElement.src = imageUrl;
+  </script>
+</body>
 </html>
