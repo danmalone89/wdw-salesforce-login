@@ -23,31 +23,7 @@
 </head>
 <body>
   <div class="image-container">
-    <img id="myImage" alt="Random Image" />
+    <img id="myImage" src="https://images.unsplash.com/photo-1445262102387-5fbb30a5e59d?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Random Image" />
   </div>
-  <script>
-    var natureUrl = "https://source.unsplash.com/random/1920x1080/?nature";
-    var petUrls = [
-      "https://i.ibb.co/m8mFJYH/wen-cat.jpg",
-      "https://i.ibb.co/dk7bgsP/wen-cat-two.jpg",
-      "https://i.ibb.co/zfDsS8t/miley1.jpg",
-      "https://i.ibb.co/DMDD7x0/miley3.jpg",
-      "https://i.ibb.co/TWXPg8c/Image-2.jpg",
-      "https://i.ibb.co/25x8TmC/jen-cat.jpg",
-      "https://i.ibb.co/Z8c3RWv/jen-dog.jpg",
-      "https://i.ibb.co/ZgpqtnD/shelby-dog.jpg",
-      "https://i.ibb.co/48LT5Cv/donnadog.jpg",
-      "https://i.ibb.co/Y2D9W1M/258743382-10103164180838219-6697138220678460253-n.jpg",
-      "https://i.ibb.co/qMP99VJ/coco.jpg",
-      "https://i.ibb.co/qMP99VJ/coco.jpg"
-    ];
-
-    // Decide randomly to show a nature image or a pet image
-    var showNature = Math.random() < 0.5; // 50% chance to show nature image
-
-    var imageUrl = showNature ? natureUrl : petUrls[Math.floor(Math.random() * petUrls.length)];
-    var imageElement = document.getElementById("myImage");
-    imageElement.src = imageUrl;
-  </script>
 </body>
 </html>
