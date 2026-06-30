@@ -39,7 +39,24 @@
     </div>
   </div>
   <script>
-    var natureUrl = "https://images.unsplash.com/photo-1572246538688-3f326dca3951?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    // Seasonal nature photos (Northern Hemisphere). One image per season.
+    var seasonalNatureUrls = {
+      spring: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1287&auto=format&fit=crop",
+      summer: "https://images.unsplash.com/photo-1572246538688-3f326dca3951?q=80&w=1287&auto=format&fit=crop",
+      autumn: "https://images.unsplash.com/photo-1507783548227-544c3b8fc065?q=80&w=1287&auto=format&fit=crop",
+      winter: "https://images.unsplash.com/photo-1483664852095-d6cc6870702d?q=80&w=1287&auto=format&fit=crop"
+    };
+
+    // Determine the current season from the month (Northern Hemisphere).
+    function getSeason() {
+      var month = new Date().getMonth(); // 0 = January ... 11 = December
+      if (month >= 2 && month <= 4) return "spring";  // Mar–May
+      if (month >= 5 && month <= 7) return "summer";  // Jun–Aug
+      if (month >= 8 && month <= 10) return "autumn"; // Sep–Nov
+      return "winter";                                // Dec–Feb
+    }
+
+    var natureUrl = seasonalNatureUrls[getSeason()];
     var petUrls = [
       "https://i.ibb.co/m8mFJYH/wen-cat.jpg",
       "https://i.ibb.co/dk7bgsP/wen-cat-two.jpg",
