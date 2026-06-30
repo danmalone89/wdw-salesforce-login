@@ -13,17 +13,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      box-sizing: border-box;
+      padding: 4vmin;
+      background: linear-gradient(135deg, #002942 0%, #00131f 100%);
+    }
+    .card {
+      width: 85%;
+      height: 85%;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
     }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
   </style>
 </head>
 <body>
   <div class="image-container">
-    <img id="myImage" alt="Random Image" />
+    <div class="card">
+      <img id="myImage" alt="Random Image" />
+    </div>
   </div>
   <script>
     var natureUrl = "https://images.unsplash.com/photo-1572246538688-3f326dca3951?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
